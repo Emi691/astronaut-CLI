@@ -29,6 +29,10 @@ class CLI
         end
     end
 
+    def astros
+        puts Astronaut.all
+    end
+
     def self.exit
         abort('Thanks for using Astros!')
     end
