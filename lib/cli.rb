@@ -46,6 +46,18 @@ class CLI
         input = gets.strip
     end
 
+    def back_or_exit(input)
+        if input == 'back'
+            self.back
+        elsif input == 'exit'
+            self.exit
+        else
+            puts 'Option not found'
+            input = gets.strip
+            back_or_exit(input)
+        end
+    end
+
     def self.exit
         abort('Thanks for using Astros!')
     end
