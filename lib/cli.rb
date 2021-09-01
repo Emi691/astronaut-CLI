@@ -12,7 +12,7 @@ class CLI
         puts '3. astronauts by country'
         puts '4. spacecraft by country'
         
-        @input = gets.strip
+        input = gets.strip
     end
 
 end
