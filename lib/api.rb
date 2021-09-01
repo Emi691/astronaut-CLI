@@ -4,6 +4,7 @@ class API
 
     def self.get_astros
         response = HTTParty.get(@@url)
+        binding.pry
     end
 
 end
