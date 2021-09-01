@@ -33,6 +33,10 @@ class CLI
         puts Astronaut.all
     end
 
+    def iss_loc
+        puts ISS.newest
+    end
+
     def self.exit
         abort('Thanks for using Astros!')
     end
