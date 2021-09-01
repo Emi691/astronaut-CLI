@@ -42,7 +42,7 @@ class CLI
         puts 'type the name of a craft to see Astronauts on board'
         puts "type in 'location' to see the current location of the ISS"
         input = gets.strip
-        self.atros_by_craft(input)
+        self.astros_by_craft(input)
     end
 
     def iss_loc
@@ -54,7 +54,7 @@ class CLI
         self.back_or_exit(input)
     end
 
-    def atros_by_craft(input)
+    def astros_by_craft(input)
         if Astronaut.all_craft.include?(input)
             Astronaut.find_by_craft(input).each{|astro| puts "#{astro.name}, #{astro.craft}"}
         elsif input == 'location'
