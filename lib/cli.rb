@@ -15,13 +15,13 @@ class CLI
     end
 
     def directory(input)
-        if input == 1
+        if input == '1'
             self.astros
-        elsif input == 2
+        elsif input == '2'
             self.craft
-        elsif input == 3
+        elsif input == '3'
             self.iss_loc
-        elsif input == exit
+        elsif input == 'exit'
             self.exit
         else
             puts 'Option not found'
@@ -33,7 +33,7 @@ class CLI
         puts 'All Astronauts:'
         puts Astronaut.all
         input = gets.strip
-        self.back_or_exit
+        self.back_or_exit(input)
     end
 
     def craft
@@ -48,9 +48,10 @@ class CLI
     def iss_loc
         puts 'Current location of the ISS:'
         API.get_iss
-        puts ISS.newest
+        puts "latitude #{ISS.newest.longitude}"
+        puts "latitude: #{ISS.newest.latitude}"
         input = gets.strip
-        self.back_or_exit
+        self.back_or_exit(input)
     end
 
     def atros_by_craft(input)
