@@ -30,12 +30,20 @@ class CLI
     end
 
     def astros
+        puts 'All Astronauts:'
         puts Astronaut.all
+        input = gets.strip
+    end
+
+    def craft
+        puts Astronaut.all_craft
     end
 
     def iss_loc
+        puts 'Current location of the ISS:'
         API.get_iss
         puts ISS.newest
+        input = gets.strip
     end
 
     def self.exit
