@@ -48,7 +48,7 @@ class CLI
 
     def back_or_exit(input)
         if input == 'back'
-            self.back
+            self.menu
         elsif input == 'exit'
             self.exit
         else
