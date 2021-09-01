@@ -4,7 +4,9 @@ class API
 
     def self.get_astros
         response = HTTParty.get(@@url)
-        binding.pry
+        response["people"].each do |astro|
+            Astronaut.new(astro)
+        end
     end
 
 end
