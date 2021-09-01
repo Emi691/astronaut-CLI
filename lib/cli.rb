@@ -33,6 +33,7 @@ class CLI
         puts 'All Astronauts:'
         puts Astronaut.all
         input = gets.strip
+        self.back_or_exit
     end
 
     def craft
@@ -41,7 +42,7 @@ class CLI
         puts 'type the name of a craft to see Astronauts on board'
         puts "type in 'location' to see the current location of the ISS"
         input = gets.strip
-        self atros_by_craft(input)
+        self.atros_by_craft(input)
     end
 
     def iss_loc
@@ -49,6 +50,7 @@ class CLI
         API.get_iss
         puts ISS.newest
         input = gets.strip
+        self.back_or_exit
     end
 
     def atros_by_craft(input)
