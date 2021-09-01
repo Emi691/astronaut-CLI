@@ -28,4 +28,8 @@ class CLI
             self.menu
         end
     end
+
+    def self.exit
+        abort('Thanks for using Astros!')
+    end
 end
