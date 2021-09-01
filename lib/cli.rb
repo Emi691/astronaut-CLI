@@ -34,6 +34,7 @@ class CLI
     end
 
     def iss_loc
+        API.get_iss
         puts ISS.newest
     end
 
