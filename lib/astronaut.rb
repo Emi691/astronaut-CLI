@@ -1,8 +1,18 @@
 class Astronaut
     attr_accessor :name, :craft
 
+    @@all = []
+
     def initialize(hash)
         hash.each {|key, value| self.send("#{key}=", value)}
-        binding.pry
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
+
+    def self.find_by_craft(craft)
+        self.all.find_all{|astro| astro.craft == craft}
     end
 end
