@@ -31,14 +31,14 @@ class CLI
 
     def astros
         puts 'All Astronauts:'
-        puts Astronaut.all
+        Astronaut.all.each{|astro| puts "#{astro.name}, #{astro.craft}"}
         input = gets.strip
         self.back_or_exit(input)
     end
 
     def craft
         puts 'All craft:'
-        puts Astronaut.all_craft
+        Astronaut.all_craft.each {|craft| puts "#{craft}"}
         puts 'type the name of a craft to see Astronauts on board'
         puts "type in 'location' to see the current location of the ISS"
         input = gets.strip
@@ -56,7 +56,7 @@ class CLI
 
     def atros_by_craft(input)
         if Astronaut.all_craft.include?(input)
-            Astronaut.find_by_craft(input)
+            Astronaut.find_by_craft(input).each{|astro| puts "#{astro.name}, #{astro.craft}"}
         elsif input == 'location'
             self.iss_loc
         elsif input == 'back'
