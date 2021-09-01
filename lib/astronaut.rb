@@ -12,6 +12,10 @@ class Astronaut
         @@all
     end
 
+    def all_craft
+        self.all.map{|astro| astro.craft}.uniq
+    end
+
     def self.find_by_craft(craft)
         self.all.find_all{|astro| astro.craft == craft}
     end
