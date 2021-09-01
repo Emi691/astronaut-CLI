@@ -12,7 +12,7 @@ class Astronaut
         @@all
     end
 
-    def all_craft
+    def self.all_craft
         self.all.map{|astro| astro.craft}.uniq
     end
 

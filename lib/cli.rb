@@ -46,9 +46,9 @@ class CLI
     end
 
     def iss_loc
-        puts 'Current location of the ISS:'
         API.get_iss
-        puts "latitude #{ISS.newest.longitude}"
+        puts 'Current location of the ISS:'
+        puts "longitude #{ISS.newest.longitude}"
         puts "latitude: #{ISS.newest.latitude}"
         input = gets.strip
         self.back_or_exit(input)
@@ -57,6 +57,8 @@ class CLI
     def astros_by_craft(input)
         if Astronaut.all_craft.include?(input)
             Astronaut.find_by_craft(input).each{|astro| puts "#{astro.name}, #{astro.craft}"}
+            input = gets.strip
+            self.back_or_exit(input)
         elsif input == 'location'
             self.iss_loc
         elsif input == 'back'
@@ -82,7 +84,7 @@ class CLI
         end
     end
 
-    def self.exit
+    def exit
         abort('Thanks for using Astros!')
     end
 end
